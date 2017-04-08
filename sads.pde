@@ -117,7 +117,7 @@ void draw()
   if (bRecordingPDF) 
   {
     background(255); // this should come BEFORE beginRecord()
-    beginRecord(PDF, "tatayaamakos_" + pdfOutputCount + ".pdf");
+    beginRecord(PDF, "face_" + pdfOutputCount + ".pdf");
     getFacePoints();
     getBezier();
     getEyes();
@@ -260,23 +260,7 @@ void drawFacePoints()
  //numberFacePoints = 5;   //GETTING RID OF 4 POINTS BECAUSE BEZIER DIDNT WORK
  if (numberFacePoints == 4)
  {
-    //line(chinx,chiny,bottomLeftx,bottomLefty);
-    //line(bottomLeftx,bottomLefty,topx,topy);
-    //line(topx,topy,bottomRightx,bottomRighty);
-    //line(bottomRightx,bottomRighty,chinx,chiny);
-
-    //line(bezier1x,bezier1y,bezier2x,bezier2y);
-    //line(bezier3x,bezier3y,bezier4x,bezier4y);
-    //line(bezier5x,bezier5y,bezier6x,bezier6y);
-    //line(bezier7x,bezier7y,bezier8x,bezier8y);
-    //point(bezier1x,bezier1y);
-    //point(bezier2x,bezier2y);
-    //point(bezier3x,bezier3y);
-    //point(bezier4x,bezier4y);
-    //point(bezier5x,bezier5y);
-    //point(bezier6x,bezier6y);
-    //point(bezier7x,bezier7y);
-    //point(bezier8x,bezier8y);
+ 
     beginShape();
     curveVertex(bezier1x,bezier1y);
     curveVertex(bezier2x,bezier2y+round(random(-10,10)));
@@ -290,49 +274,12 @@ void drawFacePoints()
     
     
     endShape(CLOSE);
-    //point(topx,topy);
-    //noFill();
-    //beginShape();
-    //curveVertex(topx,topy);
-    //curveVertex(bottomLeftx,bottomLefty);
-    //curveVertex(chinx,chiny);
-    //curveVertex(bottomRightx,bottomRighty);
-    //curveVertex(topx,topy);
-    //curveVertex(bottomLeftx,bottomLefty);
-    //curveVertex(chinx,chiny);
-    
-    // endShape(CLOSE);
-
-    //bezier(topx,topy,bezier2x,bezier2y,bottomLeftx,bottomLefty,bezier3x,bezier3y);
-     //bezier(chinx,chiny,bezier6x,bezier6y,bezier7x,bezier7y,bottomLeftx,bottomLefty);
-     //bezier(bottomLeftx,bottomLefty,bezier8x,bezier8y,bezier1x,bezier1y,topx,topy);
-     //bezier(topx,topy,bezier3x,bezier3y,bezier2x,bezier2y,bottomRightx,bottomRighty);
-     //bezier(bottomRightx,bottomRighty,bezier4x,bezier4y,bezier5x,bezier5y,chinx,chiny);
+  
 
  }
   else
   {
-    //line(chinx,chiny,bottomLeftx,bottomLefty);
-    //line(bottomLeftx,bottomLefty,topLeftx,topLefty);
-    //line(topLeftx,topLefty,topRightx,topRighty);
-    //line(topRightx,topRighty,bottomRightx,bottomRighty);
-    //line(bottomRightx,bottomRighty,chinx,chiny);
-    //point(bezier1x,bezier1y);
-    //point(bezier2x,bezier2y);
-    //point(bezier3x,bezier3y);
-    //point(bezier4x,bezier4y);
-    //point(bezier5x,bezier5y);
-    //point(bezier6x,bezier6y);
-    //point(bezier7x,bezier7y);
-    //point(bezier8x,bezier8y);
-    //point(bezier9x,bezier9y);
-    //point(bezier10x,bezier10y);
 
-    //line(bezier1x,bezier1y,bezier2x,bezier2y);
-    //line(bezier3x,bezier3y,bezier4x,bezier4y);
-    //line(bezier5x,bezier5y,bezier6x,bezier6y);
-    //line(bezier7x,bezier7y,bezier8x,bezier8y);
-    //line(bezier9x,bezier9y,bezier10x,bezier10y);
     beginShape();
     curveVertex(topRightx,topRighty+round(random(-20,90)));
     curveVertex(topLeftx+round(random(-10,10)),topLefty);
@@ -342,8 +289,7 @@ void drawFacePoints()
     curveVertex(topRightx+round(random(-10,10)),topRighty);
     curveVertex(topLeftx,topLefty+round(random(-10,10)));
     curveVertex(bottomLeftx,bottomLefty);
-    //curveVertex(topLeftx,topLefty);
-    //curveVertex(bottomLeftx,bottomLefty);    
+  
     endShape(CLOSE);
 
   }
@@ -369,11 +315,6 @@ void getBezier()
     bottomAngleLength = round(random(0,30));
     bottomAngle = round(random(20,90));
 
-    // bezier3x = getEndpointsX(bottomLeftx,bottomLefty, bottomAngleLength, bottomAngle);
-    // bezier3y = getEndpointsY(bottomLeftx,bottomLefty, bottomAngleLength, bottomAngle);
-
-    // bezier4x = getEndpointsX(bottomLeftx,bottomLefty, bottomAngleLength, bottomAngle+180);
-    // bezier4y = getEndpointsY(bottomLeftx,bottomLefty, bottomAngleLength, bottomAngle+180);
     int tempLength = round(random(0,50));
 
     bezier3x = bottomLeftx;
@@ -397,12 +338,6 @@ void getBezier()
     bezier8x = bottomRightx;
     bezier8y = bottomRighty - bottomAngleLength - tempLength;
 
-
-    // bezier7x = getEndpointsX(bottomLeftx,bottomLefty, bottomAngleLength, 180-bottomAngle);
-    // bezier7y = getEndpointsY(bottomLeftx,bottomLefty, bottomAngleLength, 180-bottomAngle);
-
-    // bezier8x = getEndpointsX(bottomLeftx,bottomLefty, bottomAngleLength, 180-bottomAngle+180);
-    // bezier8y = getEndpointsY(bottomLeftx,bottomLefty, bottomAngleLength, 180-bottomAngle+180);
 
   }
   else
